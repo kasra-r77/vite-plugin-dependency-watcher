@@ -15,12 +15,13 @@ export default function dependencyWatcher(
       });
 
       server.middlewares.use((req, res, next) => {
-        if (dependenciesName.some((name) => req.url?.includes(name))) {
-          if (req.url) {
-            req.url += Date.now();
-            res.setHeader("Expires", "0");
-            res.setHeader("Pragma", "no-cache");
-          }
+        if (
+          req.url &&
+          dependenciesName.some((name) => req.url?.includes(name))
+        ) {
+          req.url += Date.now();
+          res.setHeader("Expires", "0");
+          res.setHeader("Pragma", "no-cache");
         }
         next();
       });
