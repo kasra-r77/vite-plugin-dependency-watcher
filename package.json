@@ -1,0 +1,45 @@
+{
+  "name": "vite-plugin-dependency-watcher",
+  "version": "0.1.0",
+  "description": "Allows watching node_modules packages and reload page and resetting the cache",
+  "source": "src/index.ts",
+  "module": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "type": "module",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json"
+  ],
+  "scripts": {
+    "build": "microbundle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasra-r77/vite-plugin-dependency-watcher.git"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "plugin"
+  ],
+  "author": "Kasra Rismanchi <https://github.com/kasra-r77>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kasra-r77/vite-plugin-dependency-watcher/issues"
+  },
+  "homepage": "https://github.com/kasra-r77/vite-plugin-dependency-watcher#readme",
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "vite": "^4.5.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3"
+  }
+}
