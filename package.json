@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-dependency-watcher",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Allows watching node_modules packages and reload page and resetting the cache",
   "source": "src/index.ts",
   "module": "./dist/index.js",
