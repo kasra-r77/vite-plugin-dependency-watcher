@@ -7,6 +7,7 @@ export default function dependencyWatcher(
 ) {
   return {
     name: "dependency-watcher",
+    apply: "serve",
     //watching dependencies for file changes and reloads the browser
     configureServer(server: ViteDevServer) {
       const watcher = chokidar.watch(dependenciesPath);
@@ -25,6 +26,14 @@ export default function dependencyWatcher(
         }
         next();
       });
+    },
+
+    config() {
+      return {
+        optimizeDeps: {
+          exclude: [...dependenciesName],
+        },
+      };
     },
   };
 }
